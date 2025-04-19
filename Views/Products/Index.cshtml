@@ -1,0 +1,48 @@
+﻿@model List<ECommerceProductSorting.Models.Product>
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Products";
+}
+
+<h2 class="mb-4">@ViewData["Title"]</h2>
+
+<!-- Sorting Section -->
+<div class="mb-4">
+    <a class="btn btn-outline-primary me-2"
+       href="@Url.Action("Index", new { sortBy = "price" })">Sort by Price</a>
+
+    <a class="btn btn-outline-success me-2"
+       href="@Url.Action("Index", new { sortBy = "rating" })">Sort by Rating</a>
+
+    <a class="btn btn-outline-danger me-2"
+       href="@Url.Action("Index", new { sortBy = "category" })">Sort by Category</a>
+
+    <a class="btn btn-outline-info"
+       href="@Url.Action("Index", new { sortBy = "brand" })">Sort by Brand</a>
+</div>
+
+<table class="table table-bordered table-hover align-middle shadow-sm">
+    <thead class="table-dark text-center">
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Rating</th>
+            <th>Type</th>
+            <th>Brand</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td class="text-primary">@p.Name</td>
+                <td class="text-success">@p.Price EGP</td>
+                <td class="text-center text-warning">
+                    <i class="fas fa-star"></i> @p.Rating
+                </td>
+                <td class="text-danger">@p.Category</td>
+                <td class="text-info">@p.Brand</td>
+            </tr>
+        }
+    </tbody>
+</table>
