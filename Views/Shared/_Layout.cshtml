@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - MyStore</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+          integrity="…"
+          crossorigin="anonymous" />
+</head>
+
+<body>
+    @* Put your navbar here (or in a Partial) *@
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm mb-4">
+            <div class="container">
+                <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
+                    <img src="~/images/logo.jpg" alt="Logo" width="120" height="50" class="me-2">
+                   
+                </a>
+                <div class="d-flex">
+                    <a href="#" class="text-primary me-3">
+                        <i class="fab fa-facebook fa-2x"></i>
+                    </a>
+                    <a href="#" class="text-danger me-3">
+                        <i class="fab fa-instagram fa-2x"></i>
+                    </a>
+                    <a href="#" class="text-info me-3">
+                        <i class="fab fa-twitter fa-2x"></i>
+                    </a>
+                    <a href="#" class="text-dark">
+                        <i class="fab fa-tiktok fa-2x"></i>
+                    </a>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <div class="container mb-5 pb-5">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+
+    <footer class="bg-black py-4 border-top text-center text-light fixed-bottom">
+        <h5 class="fw-bold mb-0">
+            &copy; @DateTime.Now.Year <span class="text-warning">Talabat</span> . All rights reserved.
+        </h5>
+    </footer>
+
+
+   
+    <script src="~/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("ValidationScriptSection", required: false)
+</body>
+</html>
+
+
